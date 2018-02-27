@@ -12,7 +12,6 @@ import com.permissiondemo.utils.PermissionUtils;
 /**
  * Created by liudan on 2018/2/26.
  * 所有Activity的基类
- *jilei
  */
 
 public class BaseActivity extends AppCompatActivity {
