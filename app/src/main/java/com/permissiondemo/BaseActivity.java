@@ -29,9 +29,9 @@ public class BaseActivity extends AppCompatActivity {
     /**
      * 请求权限(在onResume中会重复调用弹窗,直到允许权限)
      *
-     * @param mActivity
-     * @param permissions
-     * @param mListener
+     * @param mActivity 上下文
+     * @param permissions 权限
+     * @param mListener 监听者
      */
     public void requestRunPermission(Activity mActivity, String[] permissions, PermissionListener mListener) {
         this.mListener = mListener;

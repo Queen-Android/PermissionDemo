@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
-import android.view.View;
 import android.widget.Button;
 
 import com.permissiondemo.utils.PermissionListener;
@@ -20,6 +19,7 @@ import java.util.List;
  * 说明:
  * 1.请求权限
  * 2.打开权限
+ * 3.漂亮的表格布局
  */
 public class MainActivity extends BaseActivity {
 
@@ -28,23 +28,21 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.button);
+        Button goTabButton = (Button) findViewById(R.id.button2);
+
         Button openPermissionActivity = (Button) findViewById(R.id.openPermissionActivity);
-        openPermissionActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
-                intent.setData(uri);
-                mContext.startActivity(intent);
-            }
+        openPermissionActivity.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
+            intent.setData(uri);
+            mContext.startActivity(intent);
         });
         permission();
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                permission();
-            }
+        button.setOnClickListener(v -> permission());
+        goTabButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, BeautifulTabActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -55,7 +53,7 @@ public class MainActivity extends BaseActivity {
         requestRunPermission(mContext, new String[]{Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE}, new PermissionListener() {
             @Override
             public void onDenied(List<String> permissions) {
-//                ToastUtils.showToast(mContext,permissions);
+
 
                 PermissionUtils.openSettingActivity(mContext, "请打开权限");
             }
@@ -74,4 +72,5 @@ public class MainActivity extends BaseActivity {
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+
 }

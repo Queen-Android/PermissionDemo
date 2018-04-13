@@ -19,7 +19,18 @@
         android:id="@+id/openPermissionActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="open Permission"
+        tools:text="open Permission"
          />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:text="漂亮的表单"/>
 
 </android.support.constraint.ConstraintLayout>

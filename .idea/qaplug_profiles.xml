@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisProjectProfileManager">
-    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="PROJECT_PROFILE" value="unnamed" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
     <scopes />
     <profiles>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-      </profile>
+      <profile profile_name="unnamed" version="1.0" is_locked="false" />
     </profiles>
     <list size="0" />
   </component>
