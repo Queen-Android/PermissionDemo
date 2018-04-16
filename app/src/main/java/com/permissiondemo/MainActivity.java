@@ -16,10 +16,6 @@ import java.util.List;
 
 /**
  * 工具类的测试使用
- * 说明:
- * 1.请求权限
- * 2.打开权限
- * 3.漂亮的表格布局
  */
 public class MainActivity extends BaseActivity {
 
