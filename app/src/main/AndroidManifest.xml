@@ -18,8 +18,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- 不可以把上面，桌面启动图标的intent-filter，跟下面短信打开App的intent-filter写一起，否者没有桌面图标-->
+            <!-- 在启动的activity加入以下代码，其中scheme很重要，短信启动App的标识吧 -->
+            <intent-filter>
+                <data android:scheme="baozi" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
         </activity>
-        <activity android:name=".BeautifulTabActivity"/>
+        <activity android:name=".BeautifulTabActivity" />
     </application>
 
 </manifest>
